@@ -12,7 +12,7 @@ int main(int argc, char const *argv[])
 {
 	signal(SIGALRM, tratar_alarm);
 	while(1){
-		alarm(2);
+		alarm(1);
 		pause();
 	}
 	return 0;
@@ -21,7 +21,7 @@ int main(int argc, char const *argv[])
 void tratar_alarm(int senyal){
 	system("clear");
 	fprintf(stdout, "%.2d:%.2d\n", minutos, segundos);
-	segundos=(segundos+2)%60;
+	segundos=(segundos+1)%60;
 	if (segundos == 0){
 		minutos=(minutos+1)%60;
 	}

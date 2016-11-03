@@ -30,11 +30,11 @@ int main()
 	/* Tiempo de repetición del contador */
 	struct timeval tiempoRepeticion;
 
-	/* Se rellena el tiempo inicial del contador con 2 segundos */
+	/* Se rellena el tiempo inicial del contador con 5 segundos */
 	tiempoInicial.tv_sec=5;
 	tiempoInicial.tv_usec=0;
 
-	/* Se rellena el tiempo de repetición con medio segundo */
+	/* Se rellena el tiempo de repetición con 0.1 segundos */
 	tiempoRepeticion.tv_sec=0;
 	tiempoRepeticion.tv_usec=100000;
 
