@@ -9,17 +9,21 @@
 int main(int argc, char const *argv[])
 {
 	int fd; //File descriptor. Descriptor de fichero.
-	char mensaje[]="Hola clase.";
-	char final=EOF;
+	char mensaje[]="Hola clase.\n";
+	int char_escritos=1;
+	int longitud;
 
-	fd = open("./fich2.txt", O_WRONLY);
+	fd = open("./fich2.txt", O_WRONLY | O_TRUNC);
 
 	if (fd == -1){
 		fprintf(stderr, "Error!!\n");
+		exit(-1);
 	}
-
-	write(fd,mensaje,strlen(mensaje)*sizeof(char));
-	write(fd,&final,sizeof(char));
+	longitud = strlen(mensaje);
+	while ( char_escritos != 0){
+		char_escritos = write(fd,mensaje,longitud*sizeof(char));
+		longitud = longitud - char_escritos;
+	}
 	close(fd);
 
 	return 0;

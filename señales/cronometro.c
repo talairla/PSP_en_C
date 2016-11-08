@@ -11,6 +11,9 @@
 
 /* Función para tratamiento de la señal SIGALRM */
 void tratamientoSenhal (int);
+void pausar5sec (int);
+void pausar (int);
+void continuar (int);
 
 /* Programa principal.
  * Pone un contador de tiempo que salta la primera vez a los dos segundos y
@@ -30,8 +33,8 @@ int main()
 	/* Tiempo de repetición del contador */
 	struct timeval tiempoRepeticion;
 
-	/* Se rellena el tiempo inicial del contador con 5 segundos */
-	tiempoInicial.tv_sec=5;
+	/* Se rellena el tiempo inicial del contador con 2 segundos */
+	tiempoInicial.tv_sec=2;
 	tiempoInicial.tv_usec=0;
 
 	/* Se rellena el tiempo de repetición con 0.1 segundos */
@@ -45,6 +48,9 @@ int main()
 	/* Se cambia el tratamiento de la señal por defecto para que llame a
 	 * nuestra función tratamientoSenhal */
 	signal (SIGALRM, tratamientoSenhal);
+
+	/* Modificamos el tratamiento de la señal SIGINT(Control-C) */
+	signal (SIGINT, pausar);
 
 	/* Se pone en marcha el contador.
 	 * La primera vez tardará 2 segundos en saltar, según indicamos en
@@ -73,4 +79,19 @@ void tratamientoSenhal (int idSenhal)
 			minutos=(minutos+1)%60;
 		}
 	}
+}
+
+void pausar5sec ( int idSenhal){
+	fprintf(stderr, "Hola\n");
+	sleep(5);
+}
+
+void pausar ( int idSenhal){
+	printf("Parado\n");
+	pause();
+}
+
+void continuar ( int idSenhal){
+	printf("Continuar...");
+	pause();
 }
