@@ -45,7 +45,9 @@ int main(int argc, char const *argv[])
 				resultado = resultado * i;
 			}
 			fprintf(stdout, "Hijo: A mí me ha salido: %llu\n",resultado );
+			close(fd[0]);
 			write(fd[1], &resultado ,sizeof(unsigned long long int));
+			close(fd[1]);
 			break;
 		default: //padre la parte baja del factorial
 			for(i=medio_objetivo;i>0;i--){
@@ -55,7 +57,9 @@ int main(int argc, char const *argv[])
 			//Esperar resultado del hijo
 			unsigned long long int resultado_hijo;
 			//Multiplicar los diferentes resultados.
+			close(fd[1]);
 			read(fd[0], &resultado_hijo, sizeof(unsigned long long int));
+			close(fd[0]);
 			wait(NULL);
 			resultado = resultado * resultado_hijo;
 			fprintf(stdout, "El factorial de %d es: %llu \n", objetivo, resultado);
