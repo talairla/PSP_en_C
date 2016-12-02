@@ -3,12 +3,10 @@
  void es_primo(long long int);
 
  int main(int argc, char const *argv[])
- {
-    
+ {    
    es_primo(961748941);
    es_primo(982451653);
    es_primo(941083987);
-
 
    return 0;
  }
@@ -27,5 +25,4 @@ void es_primo(long long int n)
    if ( c == n ){
       printf("%lld is prime.\n", n);
    }
-
  }
