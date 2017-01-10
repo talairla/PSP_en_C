@@ -1,0 +1,13 @@
+
+public class EjecutarProcessBuilder {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ProcessBuilder pb = new ProcessBuilder("mate-terminal");
+		pb.start();
+	}
+
+}

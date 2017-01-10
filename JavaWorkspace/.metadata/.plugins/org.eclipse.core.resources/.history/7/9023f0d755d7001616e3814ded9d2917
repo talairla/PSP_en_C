@@ -1,0 +1,4 @@
+
+public class Hilo2 extends Thread{
+
+}

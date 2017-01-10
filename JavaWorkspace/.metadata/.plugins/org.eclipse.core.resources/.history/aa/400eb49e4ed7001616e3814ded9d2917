@@ -1,0 +1,19 @@
+
+public class AbrirComando {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Runtime entorno = Runtime.getRuntime();
+		if(args.length != 2){
+			System.out.println("Error!, el número de parámetros es incorrecto");
+		}else{
+			try{
+				p = entorno.exec(args[1]);
+			}
+		}
+	}
+
+}

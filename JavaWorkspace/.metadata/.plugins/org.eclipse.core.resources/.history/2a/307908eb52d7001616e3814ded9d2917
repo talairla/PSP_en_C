@@ -1,0 +1,21 @@
+import java.io.IOException;
+
+
+public class EjecutarProcessBuilder {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String[] comando={"mate-teriminal"};
+		ProcessBuilder pb = new ProcessBuilder(comando);
+		try {
+			pb.start();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

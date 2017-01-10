@@ -1,0 +1,13 @@
+
+public class EjecutarProcesos {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Runtime entorno = Runtime.getRuntime();
+		Process p1, p2;
+
+	}
+
+}

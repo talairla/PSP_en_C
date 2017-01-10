@@ -1,0 +1,8 @@
+public class Hilo1 extends Thread {
+
+	public void run(){	
+		System.out.println("Soy el Hilo");
+		Thread.sleep(2000);
+	}
+	
+}

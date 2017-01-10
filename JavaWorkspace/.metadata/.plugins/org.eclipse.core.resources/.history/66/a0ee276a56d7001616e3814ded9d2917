@@ -1,0 +1,4 @@
+
+public class Hilo3 implements Runnable{
+
+}
