@@ -1,0 +1,4 @@
+Esto es un
+Fichero de texto
+escrito en texto
+plano.

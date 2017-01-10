@@ -1,0 +1,33 @@
+Librería para las señales:
+
+#include <signal.h>
+
+Para enviar una señal:
+
+int kill (int Pid, int Senyal);
+
+Para esperar a una señal:
+
+int pause(void);
+
+Para hacer que un proceso detenga su ejecución:
+
+sleep(int segundos);
+usleep(int microsegundos);
+
+Para asociar la función a la señal se utiliza:
+
+signal(int senyal, funcion);
+
+Proceso para la gestión de señales.
+
+1.- Creamos un programa.
+2.- Creamos una función que se ejecutará al recibir una señal
+3.- Enviamos la señal
+
+
+
+
+
+
+
